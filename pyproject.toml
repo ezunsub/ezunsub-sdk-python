@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ezunsub"
+version = "0.1.0"
+description = "Python SDK for EZUnsub - Contact suppression and unsubscribe management"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [
+    { name = "EZUnsub", email = "dev@ezunsub.com" }
+]
+keywords = ["ezunsub", "suppression", "unsubscribe", "email", "marketing", "compliance"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "respx>=0.20.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ezunsub/ezunsub-sdk-python"
+Documentation = "https://github.com/ezunsub/ezunsub-sdk-python#readme"
+Repository = "https://github.com/ezunsub/ezunsub-sdk-python"
+Issues = "https://github.com/ezunsub/ezunsub-sdk-python/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ezunsub"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
